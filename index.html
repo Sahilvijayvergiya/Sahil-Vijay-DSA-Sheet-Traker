@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Vijay DSA Sheet Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sahil Vijay A2Z DSA Course</h1>
+            <p class="subtitle">This course is made for people who want to learn DSA from A to Z for free in a well-organized and structured manner.</p>
+            
+            <div class="progress-section">
+                <div class="total-progress">
+                    <h3>Total Progress</h3>
+                    <div class="progress-circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="progress-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="progress-bar" id="progressCircle"></circle>
+                        </svg>
+                        <div class="progress-text">
+                            <span id="progressPercentage">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-count">
+                        <span id="completedProblems">0</span> / <span id="totalProblems">0</span>
+                    </div>
+                </div>
+                
+                <div class="difficulty-stats">
+                    <div class="diff-stat">
+                        <h4>Easy</h4>
+                        <p><span id="easyCompleted">0</span> / <span id="easyTotal">0</span> completed</p>
+                    </div>
+                    <div class="diff-stat">
+                        <h4>Medium</h4>
+                        <p><span id="mediumCompleted">0</span> / <span id="mediumTotal">0</span> completed</p>
+                    </div>
+                    <div class="diff-stat">
+                        <h4>Hard</h4>
+                        <p><span id="hardCompleted">0</span> / <span id="hardTotal">0</span> completed</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="tabs">
+                <button class="tab-btn active" data-filter="all">All Problems</button>
+                <button class="tab-btn" data-filter="Easy">Easy</button>
+                <button class="tab-btn" data-filter="Medium">Medium</button>
+                <button class="tab-btn" data-filter="Hard">Hard</button>
+            </div>
+            <div class="control-buttons">
+                <input type="text" id="searchInput" placeholder="🔍 Search problems..." class="search-box">
+                <button id="addProblemBtn" class="btn-add">+ Add Problem</button>
+                <button id="resetProgress" class="btn-reset">Reset Progress</button>
+            </div>
+        </div>
+
+        <!-- Add Problem Modal -->
+        <div id="addProblemModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Problem</h2>
+                    <button class="modal-close" onclick="closeAddProblemModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Topic</label>
+                        <select id="problemTopic" class="form-input">
+                            <option value="">Select Topic</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Problem Name</label>
+                        <input type="text" id="problemName" class="form-input" placeholder="e.g., Two Sum">
+                    </div>
+                    <div class="form-group">
+                        <label>Problem Link</label>
+                        <input type="text" id="problemLink" class="form-input" placeholder="https://leetcode.com/problems/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Difficulty</label>
+                        <select id="problemDifficulty" class="form-input">
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Companies (comma separated)</label>
+                        <input type="text" id="problemCompanies" class="form-input" placeholder="Amazon, Google, Microsoft">
+                    </div>
+                    <div class="form-group">
+                        <label>Notes / Key Concepts</label>
+                        <textarea id="problemNotes" class="form-input" rows="3" placeholder="Brief description or approach..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-cancel" onclick="closeAddProblemModal()">Cancel</button>
+                    <button class="btn-save" onclick="saveProblem()">Add Problem</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="topicsContainer" class="topics-container">
+            <!-- Topics will be dynamically generated here -->
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
