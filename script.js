@@ -56,14 +56,14 @@ function updateStats() {
     
     // Update total progress
     const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
-    document.getElementById('totalCompleted').textContent = completed;
+    document.getElementById('completedProblems').textContent = completed;
     document.getElementById('totalProblems').textContent = total;
     document.getElementById('progressPercentage').textContent = percentage + '%';
     
     // Update circular progress
     const circle = document.querySelector('.progress-bar');
     if (circle) {
-        const circumference = 2 * Math.PI * 54;
+        const circumference = 2 * Math.PI * 45;
         const offset = circumference - (percentage / 100) * circumference;
         circle.style.strokeDashoffset = offset;
     }
