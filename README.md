@@ -38,7 +38,7 @@ Branding has been customized to **Sahil Vijay DSA Sheet** with a modern UI incor
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/sahil-vijay-dsa-sheet.git
+git clone [https://github.com/your-username/sahil-vijay-dsa-sheet.git](https://sahil-vijay-dsa-sheet-traker.vercel.app/)
 3. Open `index.html` in your web browser or follow any additional instructions in the `/docs` folder.
 
 ---
