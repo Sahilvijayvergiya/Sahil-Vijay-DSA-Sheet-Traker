@@ -196,12 +196,18 @@ h1 {
     color: var(--text-primary);
     font-size: 0.9rem;
     outline: none;
-    min-width: 250px;
+    min-width: 350px;
     transition: all 0.2s ease;
 }
 
 .search-box:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.search-box::placeholder {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 .btn-add {
