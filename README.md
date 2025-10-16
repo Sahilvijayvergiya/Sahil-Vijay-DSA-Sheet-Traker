@@ -1,49 +1,84 @@
-Sahil Vijay DSA Sheet
-A modern, interactive platform for practicing and tracking Data Structures & Algorithms (DSA) interview questions, inspired by Striver’s A2Z DSA Sheet, fully sectioned by topic and difficulty for the best placement preparation.
+# Sahil Vijay DSA Sheet
 
-Overview
-This project provides a curated collection of 455 coding questions divided across major DSA topics including Arrays, Strings, Trees, Graphs, Dynamic Programming, and more. All problems match the official Striver sheet in name, content, and sequence. The platform is branded “Sahil Vijay DSA Sheet” and features intuitive icons and visual design inspired by the referenced Striver sheet interface.
+An interactive, comprehensive DSA question sheet inspired by Striver’s A2Z DSA sheet, organized by topic and difficulty level for efficient interview preparation.
 
-Features
-Section-wise organization: Each topic is split into Easy, Medium, and Hard subsections.
+---
 
-Official question count: Every question matches the original Striver DSA sheet.
+## Table of Contents
 
-Interactive UI: Solve links, resource icons, colored difficulty badges, and collapsible sections.
+- [About The Project](#about-the-project)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-Progress tracking: Mark questions as Not Started, In Progress, or Completed.
+---
 
-No extra topics: Only questions and topics present in Striver’s sheet are included.
+## About The Project
 
-Inspired design: Modern, dark-theme and iconography closely match the given reference image.
+This project is a curated list of 455 coding interview problems divided across topics like Arrays, Linked Lists, Trees, Graphs, and Dynamic Programming. The questions are organized into Easy, Medium, and Hard sections following Striver’s official DSA sheet structure.
 
-Getting Started
-To get started:
+Branding has been customized to **Sahil Vijay DSA Sheet** with a modern UI incorporating platform icons, resource links, and a progress tracker to monitor your learning journey.
 
-Clone the repository
+---
 
-Open index.html or start the server as per the instructions in the docs/ folder
+## Features
 
-Explore and solve questions section-wise by topic and difficulty
+- Topic-wise organization with collapsible sections
+- Clearly divided Easy, Medium, and Hard questions
+- Official question count matching Striver's sheet exactly
+- Interactive problem links and video tutorials
+- Progress status tagging (Not Started, In Progress, Completed)
+- Dark theme with intuitive layout based on Striver’s interface design
 
-File Structure
-README.md : Project documentation
+---
 
-src/ : Source code for web interface
+## Installation
 
-assets/ : Images and icons based on attached references
+1. Clone the repository:
+git clone https://github.com/your-username/sahil-vijay-dsa-sheet.git
+3. Open `index.html` in your web browser or follow any additional instructions in the `/docs` folder.
 
-data/ : Structured DSA question set, with topic and difficulty annotations
+---
 
-docs/ : Setup guide and further documentation
+## Usage
 
-Contributing
-Contributions are welcome to improve UI, add status features, or extend support for additional languages and explanations. Please ensure all changes retain strict alignment with the official Striver sheet topics and questions.
+- Navigate topics and difficulty sections
+- Click on ‘Solve’ links to access problem platforms
+- Utilize video tutorial links for guidance
+- Update progress for each problem
+- Filter and navigate using the UI controls
 
-License
-Distributed under the MIT License. See LICENSE for more information.
+---
 
-Acknowledgments
-Striver (Raj Vikramaditya) for the original DSA Sheet and problem curation
+## Contributing
 
-Open source contributors for UI inspiration and iconography
+Contributions, issues, and feature requests are welcome!
+
+Please ensure:
+- Added or updated content matches Striver’s official DSA sheet
+- No additional unofficial topics or questions are introduced
+- Code style and UI remain consistent
+
+Feel free to fork the project and submit pull requests.
+
+---
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for details.
+
+---
+
+## Acknowledgments
+
+- Raj Vikramaditya (Striver) for the original DSA Sheet inspiration
+- Open source contributors for UI and iconography ideas
+- The GitHub community for best practices
+
+---
+
+*Last updated: October 2025*
+
