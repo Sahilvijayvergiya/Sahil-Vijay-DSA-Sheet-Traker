@@ -266,9 +266,9 @@ function toggleStatus(topicIndex, problemIndex, isChecked) {
     }
 }
 
-// Search and filter functionality
+// Enhanced intelligent search - flexible matching (case-insensitive, ignores special chars)
 function applyFilters() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const searchTerm = document.getElementById('searchInput').value.trim();
     const currentFilter = document.querySelector('.tab-btn.active').dataset.filter;
     
     if (!searchTerm) {
@@ -276,12 +276,32 @@ function applyFilters() {
         return;
     }
     
+    // Normalize search term - remove special chars, convert to lowercase, keep only alphanumeric
+    const normalizeText = (text) => {
+        return text.toLowerCase()
+                   .replace(/[^a-z0-9\s]/g, '') // Remove special characters
+                   .replace(/\s+/g, ' ')         // Normalize spaces
+                   .trim();
+    };
+    
+    const normalizedSearch = normalizeText(searchTerm);
+    const searchWords = normalizedSearch.split(' ');
+    
     const filtered = dsaSheet.map(topic => {
-        const filteredProblems = topic.problems.filter(problem => 
-            problem.name.toLowerCase().includes(searchTerm) ||
-            problem.notes.toLowerCase().includes(searchTerm) ||
-            problem.companies.some(c => c.toLowerCase().includes(searchTerm))
-        );
+        const filteredProblems = topic.problems.filter(problem => {
+            // Normalize all searchable fields
+            const problemName = normalizeText(problem.name);
+            const problemNotes = normalizeText(problem.notes);
+            const problemTopic = normalizeText(topic.topic);
+            const problemDifficulty = normalizeText(problem.difficulty);
+            const problemCompanies = problem.companies.map(c => normalizeText(c)).join(' ');
+            
+            // Combine all searchable text
+            const searchableText = `${problemName} ${problemNotes} ${problemTopic} ${problemDifficulty} ${problemCompanies}`;
+            
+            // Check if all search words are found (flexible partial matching)
+            return searchWords.every(word => searchableText.includes(word));
+        });
         
         if (filteredProblems.length > 0) {
             return { ...topic, problems: filteredProblems };
